@@ -565,12 +565,7 @@ body {{ zoom: {}; background: {}; direction: {}; {} }}
             mw.progress.timer(1000, mw.reset, False)
             return
 
-        scaleFactor = self.zoomFactor()
-        if scaleFactor == 1:
-            scaleFactor = mw.pm.uiScale()
-
-        height = math.ceil(qvar * scaleFactor)
-        self.setFixedHeight(height)
+        self.setFixedHeight(qvar)
 
     def set_bridge_command(self, func: Callable[[str], Any], context: Any) -> None:
         """Set a handler for pycmd() messages received from Javascript.
